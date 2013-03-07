@@ -22,7 +22,7 @@ yepnope({
            'margin': '5px',
            'height': '90%',
            'width': '200px',
-           'zIndex': '100'
+           'zIndex': '1000'
          }
        },
      });
