@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <script src="easyXDM.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <style>
+      body {
+        font-size: 10pt;
+      }
+      header {
+        font-size: 12pt;
+        font-weight: bold;
+        text-align: center;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 5px;
+        border-bottom: thin solid gray;
+      }
+
+      ul {
+        padding-left: 15px;
+      }
+      
+      ul li {
+        padding-left: 0px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+      Your Highlights!
+    </header>
+
+    <ul id="highlights">
+    </ul>
+
+    <script>
+      console.log(document.referrer);
+      var socket = new easyXDM.Socket({
+        onMessage: function(message, origin) {
+          $("#highlights").append("<li>" + message + "</li>");
+        }
+      });
+    </script>
+
+  </body>
+</html>
